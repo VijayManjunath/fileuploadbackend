@@ -17,6 +17,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+app.get('/hello', (req, res) => {
+  res.send('Hello, World!');
+});
+
 // Serve static files
 app.use(express.static('public'));
 
