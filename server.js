@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3001;
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -38,4 +38,6 @@ app.post('/upload', upload.array('uploads', 10), (req, res) => {
         res.status(500).json({ error: 'An error occurred while processing the files' });
     }
 });
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
