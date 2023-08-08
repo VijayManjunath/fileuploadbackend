@@ -38,6 +38,3 @@ app.post('/upload', upload.array('uploads', 10), (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
