@@ -3,7 +3,8 @@ const multer = require('multer');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -16,6 +17,10 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage });
+
+app.get('/hello', (req, res) => {
+  res.send('Hello, World!');
+});
 
 // Serve static files
 app.use(express.static('public'));
@@ -34,6 +39,5 @@ app.post('/upload', upload.array('uploads', 10), (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
