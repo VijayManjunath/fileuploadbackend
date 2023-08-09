@@ -1,3 +1,15 @@
-"scripts": {
+{
+  "name": "your-app-name",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+  }
+}
