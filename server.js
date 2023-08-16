@@ -29,7 +29,7 @@ app.use(express.static('public'));
 app.post('/upload', upload.array('uploads', 10), (req, res) => {
     try {
         // Handle uploaded files here (e.g., save to database, process, etc.)
-        console.log('Uploaded files:', req.files);
+        console.log('Uploaded files:');
 
         // Send a success response
         res.status(200).json({ message: 'Files uploaded successfully' });
